@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- CSS -->
+
+    <!-- <link rel="stylesheet" href="{% static 'style.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'quizcss/style.css' %}">
+</head>
+
+<body>
+
+
+
+    <!-- Home Section -->
+    <div class=" bg-13072e mb-5 homeSection">
+
+        <!-- NavBar Section -->
+        <div class="navbar navbar-expand-lg navbar-dark bg-13072e">
+            <div class="container p-3">
+                <a class="navbar-brand fw-bold" href="#">Quiz Master</a>
+
+
+                <div class="navbar-nav">
+                    <a class="nav-link active">Home</a>
+                    <a class="nav-link">Quiz</a>
+                    <a class="nav-link">Contact</a>
+                </div>
+
+                <div>
+                    {% if user.is_authenticated %}
+                    <a href="../logout/" class="btn btn-outline-secondary bg-white text-dark rounded-pill">Logout</a>
+                    {% else %}
+                    <a href="../login/" class="btn btn-outline-secondary bg-white text-dark rounded-pill">Login</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- NavBar Section -->
+
+        <div class=" container bg-gradient rounded-4 ">
+
+            <div class="row align-items-center  ">
+                <div class="col-6  p-4">
+                    <p class="fs-1 fw-bold text-13072e m-0  ">Flexible Solutions for
+                        Your Business</p>
+                    <p class="fs-5 fw-bold">Test Your Knowledge, Challenge Your Mind!</p>
+                    <p class=" fs-6  letterSpacing-1 mb-4 ">
+                        The ultimate quiz experience where fun and learning come together! Dive into a world of
+                        challenging questions,
+                        test your knowledge across various categories, and compete with players from around the globe.
+                        Whether you’re
+                        looking to improve your skills or just have a blast with friends, [App Name] has something for
+                        everyone. Ready
+                        to challenge your mind? Let’s get quizzing!
+                    </p>
+
+                    <button class="btn bg-13072e text-white fw-bold p-3 ">Explore with us</button>
+                </div>
+                <div class="col-6 text-center ">
+                    <img src="{% static 'image.webp' %}" class="w-75">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Quiz Section -->
+
+    <!-- Quiz Section - New Design -->
+    <div class="container py-5 mb-5">
+        <div class="text-center mb-5">
+            <h2 class="section-title fw-bold display-5 mb-4 text-main">Dive Into Our Quizzes</h2>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                Select one or more domains to create your custom quiz experience. Challenge yourself with topics you
+                love!
+            </p>
+        </div>
+
+        <form id="quizSelectionForm" method="post" action="../custom_quiz/">
+            {% csrf_token %}
+            <div class="row g-4">
+                {% for domain in domains %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="selectable-card card h-100 border-0 shadow-sm card-hover-effect">
+                        <div class="form-check position-absolute top-0 end-0 m-3">
+                            <input class="form-check-input domain-checkbox" type="checkbox" name="selected_domains"
+                                value="{{domain.name}}" id="domain-{{domain.name}}">
+                        </div>
+                        <div class="card-body text-center py-4 px-4">
+                            <div class="domain-icon">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h3 class="card-title h5 fw-bold mb-3">{{domain.display_name}}</h3>
+                            <p class="card-text text-muted">{{domain.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="text-center mt-5 pt-4">
+                <button type="submit" id="startQuizBtn"
+                    class="btn btn-main btn-lg rounded-pill px-5 py-3 fw-bold d-none pulse-animation">
+                    Start Custom Quiz (<span id="selectedCount">0</span> Selected)
+                </button>
+            </div>
+        </form>
+
+
+
+    </div>
+
+
+    
+        <!-- Footer Section -->
+        <footer class="bg-main text-white">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <h3 class="h4 mb-3">Quiz Master</h3>
+                        <p>The ultimate quiz experience where fun and learning come together!</p>
+                        <div class="d-flex mt-4">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                        <h4 class="h5 mb-3">Quick Links</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="footer-link">Home</a></li>
+                            <li class="mb-2"><a href="#" class="footer-link">About</a></li>
+                            <li class="mb-2"><a href="#" class="footer-link">Quizzes</a></li>
+                            <li class="mb-2"><a href="#" class="footer-link">Leaderboard</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                        <h4 class="h5 mb-3">Categories</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><a href="#" class="footer-link">Technology</a></li>
+                            <li class="mb-2"><a href="#" class="footer-link">Science</a></li>
+                            <li class="mb-2"><a href="#" class="footer-link">History</a></li>
+                            <li class="mb-2"><a href="#" class="footer-link">Arts</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <h4 class="h5 mb-3">Newsletter</h4>
+                        <p>Subscribe to get updates on new quizzes and features.</p>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email" aria-label="Your email">
+                            <button class="btn btn-light" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4 bg-light">
+                <div class="text-center">
+                    <p class="mb-0">&copy; 2023 Quiz Master. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+    <!-- Bootstrap JS CDN and jQuery CDN-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+    <!-- jQuery-->
+    <script src="{% static 'indexJQuery.js' %}"></script>
+
+</body>
+
+</html>

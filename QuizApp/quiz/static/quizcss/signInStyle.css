@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+}
+
+:root {
+    --main-color: #4A3260;
+    --supporting-color: #C6BADE;
+}
+
+/* .letterSpacing-1 {
+    letter-spacing: 1px;
+    text-align: justify;
+} */
+
+.bg-4A3260{
+    background-color: var(--main-color);
+}
+
+.bg-C6BADE{
+    background-color:  var(--supporting-color);
+}
+
+.text-4A3260{
+    color:var(--main-color);
+}
+
+.socialMediaIcon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+
+

@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #4A3260;
+    --supporting-color: #f8f9fa;
+    --highlight-color: #6a11cb;
+    --text-dark: #4A4A4A;
+    --text-light: #f8f9fa;
+    --card-bg: #ffffff;
+}
+
+.letterSpacing-1 {
+    text-align: justify;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+}
+
+.bg-13072e {
+    background-color: var(--main-color);
+}
+
+.bg-gradient {
+    background: var(--supporting-color);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.text-4A4A4A {
+    color: var(--text-dark);
+}
+
+.text-13072e {
+    color: var(--main-color);
+}
+
+.sectionHeadings {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+.homeSection {
+    min-height: 100vh;
+    background-color: var(--main-color);
+}
+
+
+/* Quiz Section */
+.container.py-5.mb-5 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    bottom: -10px;
+    left: 0;
+    background-color: var(--main-color);
+    border-radius: 2px;
+}
+
+.selectable-card {
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.selectable-card.selected {
+    border-color: var(--main-color);
+    background-color: rgba(74, 50, 96, 0.05);
+}
+
+.selectable-card.selected .domain-icon {
+    background-color: var(--main-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.selectable-card.selected .card-title {
+    color: var(--main-color);
+}
+
+.domain-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: #dce9fa;
+    color: var(--main-color);
+    transition: all 0.3s ease;
+}
+
+.card-hover-effect {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 50, 96, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(74, 50, 96, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 50, 96, 0); }
+}
+
+/* Footer Section */
+footer {
+    background-color: var(--main-color);
+    color: white;
+    margin-top: auto;
+    padding: 2rem 0;
+}
+
+.footer-link {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+}
+
+.bg-main {
+    background-color: var(--main-color);
+}
