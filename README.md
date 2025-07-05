@@ -125,5 +125,14 @@ For Candidates:
 
 
 ---
-
+# ADMIN PORTAL
 ![Project and 5 more pages - Personal - Microsoft_ Edge 2025-07-05 14-31-11 (1)](https://github.com/user-attachments/assets/c1f92fce-2614-4f9d-b945-858469d38aa8)
+
+# CANDIDATE PORTAL
+![Screenshot 2025-07-05 155338](https://github.com/user-attachments/assets/73f1a54f-979c-46c1-a86e-0b1ed34ec3ac)
+![Screenshot 2025-07-05 155327](https://github.com/user-attachments/assets/ec0b627e-ebd6-4506-aab1-29dbcb125afd)
+![Screenshot 2025-07-05 155036](https://github.com/user-attachments/assets/b6d75442-6b61-4720-b0be-49f50f52b3ff)
+![Screenshot 2025-07-05 155018](https://github.com/user-attachments/assets/8605769b-9700-4274-a845-16053a0820ec)
+![Screenshot 2025-07-05 154818](https://github.com/user-attachments/assets/ec45e1cc-e4a0-4424-9038-8236c3b07ba2)
+![Screenshot 2025-07-05 154802](https://github.com/user-attachments/assets/9aba8f22-4a9e-4311-b392-7557cd3d0627)
+
