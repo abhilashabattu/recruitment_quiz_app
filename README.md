@@ -125,4 +125,5 @@ For Candidates:
 
 
 ---
-![Project and 5 more pages - Personal - Microsoft_ Edge 2025-07-05 14-31-11](https://github.com/user-attachments/assets/51f7f059-c70b-4949-bf78-26f159f58760)
+
+![Project and 5 more pages - Personal - Microsoft_ Edge 2025-07-05 14-31-11 (1)](https://github.com/user-attachments/assets/c1f92fce-2614-4f9d-b945-858469d38aa8)
